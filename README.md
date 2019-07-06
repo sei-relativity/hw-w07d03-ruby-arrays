@@ -2,24 +2,22 @@
 
 ![ARRAYS](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVWBMdo6Ac3moY3tPnzMsFVnOscOR03SxkZ4sPGGhsWoQrYMPZ9g)
 
-> PS: we have STICKERS 🌝❗️
-
 ## 1. Return an array of each Student's full name, upper-cased
 
 ```rb
 
 students = [
   {
-      first_name: 'Abdulmohsin',
-      last_name: 'Alsharhan'
+      first_name: 'Ahmed',
+      last_name: 'Al-Bahrani'
   },
   {
-      first_name: 'Alya',
-      last_name: 'Alrashidi',
+      first_name: 'Reem',
+      last_name: 'AlHarbi',
   },
   {
-      first_name: 'Nahed',
-      last_name: 'Hawsawi',
+      first_name: 'Mansour',
+      last_name: 'Almohsen',
   }
 ]
 
@@ -30,11 +28,9 @@ upper_case_full_names = []
 ### Answer
 
 ```rb
-
-ABDULMOHSIN ALSHARHAN
-ALYA ALRASHIDI
-NAHED HAWSAWI
-
+AHMED AL-BAHRANI
+REEM ALHARBI
+MANSOUR ALMOHSEN
 ```
 
 ## 2. Find the first order for each user
@@ -43,7 +39,7 @@ NAHED HAWSAWI
 
 users = [
   {
-      name: 'Salem',
+      name: 'Hanan',
       orders: [
           {
               description: 'a bike'
@@ -51,7 +47,7 @@ users = [
       ]
   },
   {
-      name: 'Abdullah',
+      name: 'Abdulrahman',
       orders: [
           {
               description: 'bees'
@@ -62,7 +58,7 @@ users = [
       ]
   },
   {
-      name: 'Rawan',
+      name: 'Turki',
       orders: [
           {
               description: 'a MacBook'
@@ -100,7 +96,7 @@ first_order_for_each_user = []
 
 people = [
   {
-      name: 'Sara',
+      name: 'Ahlam',
       transactions: [
           {
               type: 'COFFEE',
@@ -117,7 +113,7 @@ people = [
       ]
   },
   {
-      name: 'Ahmad',
+      name: 'Sulaiman',
       transactions: [
           {
               type: 'BIKES',
@@ -134,7 +130,7 @@ people = [
       ]
   },
   {
-      name: 'Hala',
+      name: 'Norah',
       transactions: [
           {
               type: 'COFFEE',
@@ -161,9 +157,9 @@ coffee_average_per_person = []
 
 ```rb
 
-{:name=>"Sara", :coffee_average=>5.93}
-{:name=>"Ahmad", :coffee_average=>4.43}
-{:name=>"Hala", :coffee_average=>37.28666666666667}
+{:name=>"Ahlam", :coffee_average=>5.93}
+{:name=>"Sulaiman", :coffee_average=>4.43}
+{:name=>"Norah", :coffee_average=>37.28666666666667}
 
 ```
 
