@@ -142,3 +142,63 @@
 #     coffee_average_per_person.push("#{person[:name]}, #{coffe_total / number_of_coffee}")
 # }
 # puts coffee_average_per_person
+
+
+# 4
+stores = [
+    {
+        store_name: 'Jarir',
+        products: [
+            {
+                description: 'Titanium',
+                price: 9384.33
+            },
+            {
+                description: 'Gold',
+                price: 345.54
+            }
+        ]
+    },
+    {
+        store_name: 'Tamimi',
+        products: [
+            {
+                description: 'Silver',
+                price: 654.44
+            },
+            {
+                description: 'Ruby',
+                price: 323.43
+            }
+        ]
+    },
+    {
+        store_name: 'Souq',
+        products: [
+            {
+                description: 'Opal',
+                price: 345.43
+            },
+            {
+                description: 'Sapphire',
+                price: 899.33
+            }
+        ]
+    }
+  ]
+  
+  most_expensive_products_by_store = []
+
+  stores.each{|store| 
+    item_description = ''
+    item_price = 0
+    store[:products].each{|product|
+        if (product[:price] > item_price)
+            item_description =  product[:description]
+            item_price = product[:price]
+        end}
+        
+        most_expensive_products_by_store.push("#{store} most expensive product #{item_description} at #{item_price}")
+    }
+
+    puts most_expensive_products_by_store
