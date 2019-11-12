@@ -27,6 +27,27 @@ upper_case_full_names = []
 
 ### Answer
 
+students = [
+    {
+        first_name: 'Lamees',
+        last_name: 'AlFallaj'
+    },
+    {
+        first_name: 'Aisha',
+        last_name: 'AlDabbagh',
+    },
+    {
+        first_name: 'Abdulwahhab',
+        last_name: 'AlBalla',
+    }
+  ]
+  
+  upper_case_full_names = students.map do |student|
+    uppercase = "#{student[:first_name].upcase} #{student[:last_name].upcase}"
+    uppercase
+  end
+  puts upper_case_full_names
+
 ```rb
 LAMEES ALFALLAJ
 AISHA ALDABBAGH
@@ -81,6 +102,51 @@ first_order_for_each_user = []
 ```
 
 ### Answer
+users = [
+    {
+        name: 'Fahad',
+        orders: [
+            {
+                description: 'a bike'
+            }
+        ]
+    },
+    {
+        name: 'Abdulrahman',
+        orders: [
+            {
+                description: 'bees'
+            },
+            {
+                description: 'fishing rod'
+            }
+        ]
+    },
+    {
+        name: 'Muhannad',
+        orders: [
+            {
+                description: 'a MacBook'
+            },
+            {
+                description: 'The West Wing DVDs'
+            },
+            {
+                description: 'headphones'
+            },
+            {
+                description: 'a kitten'
+            }
+        ]
+    }
+  ]
+  
+  
+  first_order_for_each_user = users.map do |user|
+    order = "#{user[:name]} #{user[:orders].first} "
+    order
+  end
+  puts first_order_for_each_user
 
 ```rb
 
@@ -155,6 +221,80 @@ coffee_average_per_person = []
 
 ### Answer
 
+people = [
+    {
+        name: 'Sarah',
+        transactions: [
+            {
+                type: 'COFFEE',
+                amount: 7.43
+            },
+            {
+                type: 'TACOS',
+                amount: 14.65
+            },
+            {
+                type: 'COFFEE',
+                amount: 4.43
+            }
+        ]
+    },
+    {
+        name: 'Saud',
+        transactions: [
+            {
+                type: 'BIKES',
+                amount: 800.00
+            },
+            {
+                type: 'TACOS',
+                amount: 14.65
+            },
+            {
+                type: 'COFFEE',
+                amount: 4.43
+            }
+        ]
+    },
+    {
+        name: 'Norah',
+        transactions: [
+            {
+                type: 'COFFEE',
+                amount: 7.43
+            },
+            {
+                type: 'COFFEE',
+                amount: 100.00
+            },
+            {
+                type: 'COFFEE',
+                amount: 4.43
+            }
+        ]
+    }
+  ]
+  
+  
+  
+  coffee_average_per_person = people.map do |name|
+        coffee_conter=0
+        coffee_amount=0
+        name[:transactions].each do |avg|
+            if avg[:type]=='COFFEE' 
+                coffee_conter+=1
+                coffee_amount += avg[:amount]
+            end
+
+        end
+        puts coffee_amount
+        puts coffee_conter
+        {name: name[:name],
+         avg: coffee_amount/coffee_conter}
+        
+    end    
+  puts   coffee_average_per_person
+
 ```rb
 
 {:name=>"Sarah", :coffee_average=>5.93}
@@ -215,6 +355,60 @@ most_expensive_products_by_store = []
 
 ### Answer
 
+stores = [
+    {
+        store_name: 'Jarir',
+        products: [
+            {
+                description: 'Titanium',
+                price: 9384.33
+            },
+            {
+                description: 'Gold',
+                price: 345.54
+            }
+        ]
+    },
+    {
+        store_name: 'Tamimi',
+        products: [
+            {
+                description: 'Silver',
+                price: 654.44
+            },
+            {
+                description: 'Ruby',
+                price: 323.43
+            }
+        ]
+    },
+    {
+        store_name: 'Souq',
+        products: [
+            {
+                description: 'Opal',
+                price: 345.43
+            },
+            {
+                description: 'Sapphire',
+                price: 899.33
+            }
+        ]
+    }
+  ]
+  
+  most_expensive_products_by_store = []
+  
+  
+  stores.each do |name|
+        if name[:products][0][:price]>name[:products][1][:price]
+            most_expensive_products_by_store.push({store_name: name[:store_name], most_expensive_products: name[:products][0]})
+        else
+            most_expensive_products_by_store.push({store_name: name[:store_name], most_expensive_products: name[:products][1]})
+        end
+      end
+      puts most_expensive_products_by_store
+
 ```rb
 
 {:store_name=>"Jarir", :most_expensive_product=>{:description=>"Titanium", :price=>9384.33}}
@@ -228,6 +422,16 @@ most_expensive_products_by_store = []
 Write an infinite loop that will make you add all the your friends in the students list and after each add will ask if you want to quit the loop (yes/no) if the user choose no print all the students array
 
 ### Answer
+
+input = ""
+students = []
+while input != "n" do
+  puts "Write Student name"
+  students.push(gets.chomp)
+  puts "Would you like to add a student? (y/n)"
+  input = gets.chomp
+end
+puts students
 
 ```
 
