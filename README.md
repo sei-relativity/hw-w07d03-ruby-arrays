@@ -21,7 +21,9 @@ students = [
   }
 ]
 
-upper_case_full_names = []
+upper_case_full_names = students.map do |key| 
+    key.values[0].upcase + " " + key.values[1].upcase
+  end
 
 ```
 
@@ -76,7 +78,10 @@ users = [
   }
 ]
 
-first_order_for_each_user = []
+  first_order_for_each_user = users.map do |key|
+    key.values[1].first
+  end
+  p first_order_for_each_user
 
 ```
 
@@ -150,7 +155,20 @@ people = [
 
 
 coffee_average_per_person = []
+coffee_average_per_person = people.map do |index|
+    sum =0
+    num_of_coffee = 0
+    index[:transactions].each do |key|
+        if key[:type] == "COFFEE"
+            num_of_coffee += 1
+            sum += key[:amount]
+        end
+    end
+    #coffee_average_per_person.push({name: index[:name],coffee_average: sum/num_of_coffee}) 
+    {name: index[:name],coffee_average: sum/num_of_coffee}
 
+  end
+ p coffee_average_per_person
 ```
 
 ### Answer
@@ -210,6 +228,17 @@ stores = [
 ]
 
 most_expensive_products_by_store = []
+stores.each do |index|
+    highest_price = 0;
+    item_desrciption = '';
+    index[:products].each do |product|
+        if product[:price] > highest_price
+            highest_price = product[:price]
+            item_desrciption = product[:description]
+        end
+    end
+        most_expensive_products_by_store.push({store_name: index[:store_name], most_expensive_products: {description: item_desrciption, price: highest_price}})
+    end
 
 ```
 
@@ -240,5 +269,15 @@ Raje AlHarthi
 Do you want to continue ? (y/n)
 y
 add a student
+
+input = ""
+students = []
+while input != "n" do
+  puts "Write Student name"
+  students.push(gets.chomp)
+  puts "Would you like to add a student? (y/n)"
+  input = gets.chomp
+end
+p students
 
 ```
