@@ -1,92 +1,92 @@
-#_____________________________________________________________ Ruby Map Practice
+# _____________________________________________________________ Ruby Map Practice
 
-# #____________________ 1. Return an array of each Student's full name, upper-cased
-# students = [
-#   {
-#     first_name: 'Lamees',
-#     last_name: 'AlFallaj'
-#   },
-#   {
-#     first_name: 'Aisha',
-#     last_name: 'AlDabbagh',
-#   },
-#   {
-#     first_name: 'Abdulwahhab',
-#     last_name: 'AlBalla',
-#   }
-# ]
+#____________________ 1. Return an array of each Student's full name, upper-cased
+students = [
+  {
+    first_name: 'Lamees',
+    last_name: 'AlFallaj'
+  },
+  {
+    first_name: 'Aisha',
+    last_name: 'AlDabbagh',
+  },
+  {
+    first_name: 'Abdulwahhab',
+    last_name: 'AlBalla',
+  }
+]
 
-# upper_case_full_names = []
+upper_case_full_names = []
 
-# upper_case_full_names = students.map do |student|
-#   1 way
-#   "#{student[:first_name].upcase} #{student[:last_name].upcase}"
-#   2 way
-#   "#{student[:first_name].upcase + " " + student[:last_name].upcase}"
-# end
+upper_case_full_names = students.map do |student|
+  # 1 way
+  "#{student[:first_name].upcase} #{student[:last_name].upcase}"
+  # 2 way
+  # "#{student[:first_name].upcase + " " + student[:last_name].upcase}"
+end
 
-# puts upper_case_full_names
+puts upper_case_full_names
 
-# # Answer
-# # LAMEES ALFALLAJ
-# # AISHA ALDABBAGH
-# # ABDULWAHHAB ALBALLA
+# Answer
+# LAMEES ALFALLAJ
+# AISHA ALDABBAGH
+# ABDULWAHHAB ALBALLA
 
-# #____________________ 2. Find the first order for each user
-# users = [
-#   {
-#     name: 'Fahad',
-#     orders: [
-#       {
-#         description: 'a bike'
-#       }
-#     ]
-#   },
-#   {
-#     name: 'Abdulrahman',
-#     orders: [
-#       {
-#         description: 'bees'
-#       },
-#       {
-#         description: 'fishing rod'
-#       }
-#     ]
-#   },
-#   {
-#     name: 'Muhannad',
-#     orders: [
-#       {
-#         description: 'a MacBook'
-#       },
-#       {
-#         description: 'The West Wing DVDs'
-#       },
-#       {
-#         description: 'headphones'
-#       },
-#       {
-#         description: 'a kitten'
-#       }
-#     ]
-#   }
-# ]
+#____________________ 2. Find the first order for each user
+users = [
+  {
+    name: 'Fahad',
+    orders: [
+      {
+        description: 'a bike'
+      }
+    ]
+  },
+  {
+    name: 'Abdulrahman',
+    orders: [
+      {
+        description: 'bees'
+      },
+      {
+        description: 'fishing rod'
+      }
+    ]
+  },
+  {
+    name: 'Muhannad',
+    orders: [
+      {
+        description: 'a MacBook'
+      },
+      {
+        description: 'The West Wing DVDs'
+      },
+      {
+        description: 'headphones'
+      },
+      {
+        description: 'a kitten'
+      }
+    ]
+  }
+]
 
-# first_order_for_each_user = []
+first_order_for_each_user = []
 
-# first_order_for_each_user = users.map do |user|
-#   # 1 way
-#   "#{user[:orders].first}"
-#   # 2 way
-#   # "#{user[:orders][0]}"
-# end
+first_order_for_each_user = users.map do |user|
+  # 1 way
+  "#{user[:orders].first}"
+  # 2 way
+  # "#{user[:orders][0]}"
+end
 
-# puts first_order_for_each_user
+puts first_order_for_each_user
 
-# # Answer
-# # {:description=>"a bike"}
-# # {:description=>"bees"}
-# # {:description=>"a MacBook"}
+# Answer
+# {:description=>"a bike"}
+# {:description=>"bees"}
+# {:description=>"a MacBook"}
 
 #____________________ 3. Find the average amount spent on coffee, per transaction, for each person
 people = [
@@ -166,7 +166,7 @@ coffee_average_per_person = people.map do |person|
   coffee_average = total_transactions / coffee_count
 
   {
-    name:person[:name],
+    name: person[:name],
     coffee_average: coffee_average
   }
 end
@@ -178,52 +178,75 @@ puts coffee_average_per_person
 # {:name=>"Saud", :coffee_average=>4.43}
 # {:name=>"Norah", :coffee_average=>37.28666666666667}
 
-# #____________________ 4. Find the most expensive product for each store, with the store name:
-# stores = [
-#   {
-#       store_name: 'Jarir',
-#       products: [
-#           {
-#               description: 'Titanium',
-#               price: 9384.33
-#           },
-#           {
-#               description: 'Gold',
-#               price: 345.54
-#           }
-#       ]
-#   },
-#   {
-#       store_name: 'Tamimi',
-#       products: [
-#           {
-#               description: 'Silver',
-#               price: 654.44
-#           },
-#           {
-#               description: 'Ruby',
-#               price: 323.43
-#           }
-#       ]
-#   },
-#   {
-#       store_name: 'Souq',
-#       products: [
-#           {
-#               description: 'Opal',
-#               price: 345.43
-#           },
-#           {
-#               description: 'Sapphire',
-#               price: 899.33
-#           }
-#       ]
-#   }
-# ]
+#____________________ 4. Find the most expensive product for each store, with the store name:
+stores = [
+  {
+    store_name: 'Jarir',
+    products: [
+      {
+        description: 'Titanium',
+        price: 9384.33
+      },
+      {
+        description: 'Gold',
+        price: 345.54
+      }
+    ]
+  },
+  {
+    store_name: 'Tamimi',
+    products: [
+      {
+        description: 'Silver',
+        price: 654.44
+      },
+      {
+        description: 'Ruby',
+        price: 323.43
+      }
+    ]
+  },
+  {
+    store_name: 'Souq',
+    products: [
+      {
+        description: 'Opal',
+        price: 345.43
+      },
+      {
+        description: 'Sapphire',
+        price: 899.33
+      }
+    ]
+  }
+]
 
-# most_expensive_products_by_store = []
+most_expensive_products_by_store = []
 
-# # Answer
-# # {:store_name=>"Jarir", :most_expensive_product=>{:description=>"Titanium", :price=>9384.33}}
-# # {:store_name=>"Tamimi", :most_expensive_product=>{:description=>"Silver", :price=>654.44}}
-# # {:store_name=>"Souq", :most_expensive_product=>{:description=>"Sapphire", :price=>899.33}}
+most_expensive_products_by_store = stores.map do |store|
+
+  max_price = 0
+  description = ""
+
+  store[:products].each do |product|
+    if max_price < product[:price]
+      max_price   = product[:price]
+      description = product[:description]
+    end
+  end
+
+  {
+    store_name: store[:store_name],
+    most_expensive_product: {
+    description: description,
+    price: max_price
+    }
+  }
+end
+
+puts most_expensive_products_by_store
+
+# Answer
+# {:store_name=>"Jarir", :most_expensive_product=>{:description=>"Titanium", :price=>9384.33}}
+# {:store_name=>"Tamimi", :most_expensive_product=>{:description=>"Silver", :price=>654.44}}
+# {:store_name=>"Souq", :most_expensive_product=>{:description=>"Sapphire", :price=>899.33}}
