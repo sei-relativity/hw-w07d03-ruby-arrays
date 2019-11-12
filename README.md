@@ -271,7 +271,21 @@ Write an infinite loop that will make you add all the your friends in the studen
 
 ### Answer
 
+```rb
+  student =[]
+
+  loop do
+    puts "add a student"
+    student_name = gets.chomp
+    student << student_name
+    puts "do you want to stop (y/n)"
+    stop = gets.chomp
+    break if stop.downcase =='y'
+  end
+
+puts student
 ```
+```text
 
 add a student
 Mohammed AlOfaysan
