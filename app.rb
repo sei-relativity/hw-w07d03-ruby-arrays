@@ -216,7 +216,7 @@ stores = [
           end
       end
   
-      "most_expensive_product=> #{store_name}, most_expensive_product=> , #{description}, #{most_expensive_product}"
+      "{:store_name=> #{store_name}, most_expensive_product=> {:description=> #{description}, :price=>#{most_expensive_product}}}"
   
   end
   puts most_expensive_products_by_store
