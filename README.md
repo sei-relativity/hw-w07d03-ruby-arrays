@@ -8,16 +8,16 @@
 
 students = [
   {
-      first_name: 'Ahmed',
-      last_name: 'Al-Bahrani'
+      first_name: 'Lamees',
+      last_name: 'AlFallaj'
   },
   {
-      first_name: 'Reem',
-      last_name: 'AlHarbi',
+      first_name: 'Aisha',
+      last_name: 'AlDabbagh',
   },
   {
-      first_name: 'Mansour',
-      last_name: 'Almohsen',
+      first_name: 'Abdulwahhab',
+      last_name: 'AlBalla',
   }
 ]
 
@@ -28,9 +28,9 @@ upper_case_full_names = []
 ### Answer
 
 ```rb
-AHMED AL-BAHRANI
-REEM ALHARBI
-MANSOUR ALMOHSEN
+LAMEES ALFALLAJ
+AISHA ALDABBAGH
+ABDULWAHHAB ALBALLA
 ```
 
 ## 2. Find the first order for each user
@@ -39,7 +39,7 @@ MANSOUR ALMOHSEN
 
 users = [
   {
-      name: 'Hanan',
+      name: 'Fahad',
       orders: [
           {
               description: 'a bike'
@@ -58,7 +58,7 @@ users = [
       ]
   },
   {
-      name: 'Turki',
+      name: 'Muhannad',
       orders: [
           {
               description: 'a MacBook'
@@ -96,7 +96,7 @@ first_order_for_each_user = []
 
 people = [
   {
-      name: 'Ahlam',
+      name: 'Sarah',
       transactions: [
           {
               type: 'COFFEE',
@@ -113,7 +113,7 @@ people = [
       ]
   },
   {
-      name: 'Sulaiman',
+      name: 'Saud',
       transactions: [
           {
               type: 'BIKES',
@@ -157,8 +157,8 @@ coffee_average_per_person = []
 
 ```rb
 
-{:name=>"Ahlam", :coffee_average=>5.93}
-{:name=>"Sulaiman", :coffee_average=>4.43}
+{:name=>"Sarah", :coffee_average=>5.93}
+{:name=>"Saud", :coffee_average=>4.43}
 {:name=>"Norah", :coffee_average=>37.28666666666667}
 
 ```
@@ -232,11 +232,11 @@ Write an infinite loop that will make you add all the your friends in the studen
 ```
 
 add a student
-Asma Baabdullah
+Mohammed AlOfaysan
 Do you want to continue ? (y/n)
 y
 add a student
-Fajr Albakiri
+Raje AlHarthi
 Do you want to continue ? (y/n)
 y
 add a student
