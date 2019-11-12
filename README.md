@@ -228,6 +228,17 @@ stores = [
 ]
 
 most_expensive_products_by_store = []
+stores.each do |index|
+    highest_price = 0;
+    item_desrciption = '';
+    index[:products].each do |product|
+        if product[:price] > highest_price
+            highest_price = product[:price]
+            item_desrciption = product[:description]
+        end
+    end
+        most_expensive_products_by_store.push({store_name: index[:store_name], most_expensive_products: {description: item_desrciption, price: highest_price}})
+    end
 
 ```
 
