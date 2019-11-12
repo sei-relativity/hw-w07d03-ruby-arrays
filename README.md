@@ -28,6 +28,13 @@ upper_case_full_names = []
 ### Answer
 
 ```rb
+
+upper_case_full_names = students.map do |student|
+  "#{student[:first_name].upcase} #{student[:last_name].upcase}"
+end
+
+puts upper_case_full_names
+
 LAMEES ALFALLAJ
 AISHA ALDABBAGH
 ABDULWAHHAB ALBALLA
@@ -83,6 +90,11 @@ first_order_for_each_user = []
 ### Answer
 
 ```rb
+first_order_for_each_user = users.map do | user|
+  user[:orders][0]
+end
+
+puts first_order_for_each_user
 
 {:description=>"a bike"}
 {:description=>"bees"}
@@ -156,7 +168,20 @@ coffee_average_per_person = []
 ### Answer
 
 ```rb
+coffee_average_per_person=people.map do |person|
+      sum = 0
+      time = 0
+      person[:transactions].each do |transaction|
+        if transaction[:type] == "COFFEE"
+           sum += transaction[:amount]
+           time = time+1
+        end
+      end
+      { name: person[:name] ,
+        coffee_average: (sum/time) }
+end
 
+puts coffee_average_per_person
 {:name=>"Sarah", :coffee_average=>5.93}
 {:name=>"Saud", :coffee_average=>4.43}
 {:name=>"Norah", :coffee_average=>37.28666666666667}
@@ -217,6 +242,23 @@ most_expensive_products_by_store = []
 
 ```rb
 
+most_expensive_products_by_store = stores.map do |product|
+
+ if product[:products][0][:price] > product[:products][1][:price]
+  most_expensive_product = product[:products][0]
+ else
+  most_expensive_product = product[:products][1]
+ end
+ {
+  store_name: product[:store_name],
+  most_expensive_product: most_expensive_product
+ }
+end
+
+
+
+puts most_expensive_products_by_store
+
 {:store_name=>"Jarir", :most_expensive_product=>{:description=>"Titanium", :price=>9384.33}}
 {:store_name=>"Tamimi", :most_expensive_product=>{:description=>"Silver", :price=>654.44}}
 {:store_name=>"Souq", :most_expensive_product=>{:description=>"Sapphire", :price=>899.33}}
@@ -229,7 +271,21 @@ Write an infinite loop that will make you add all the your friends in the studen
 
 ### Answer
 
+```rb
+  student =[]
+
+  loop do
+    puts "add a student"
+    student_name = gets.chomp
+    student << student_name
+    puts "do you want to stop (y/n)"
+    stop = gets.chomp
+    break if stop.downcase =='y'
+  end
+
+puts student
 ```
+```text
 
 add a student
 Mohammed AlOfaysan
