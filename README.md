@@ -26,6 +26,9 @@ upper_case_full_names = []
 ```
 
 ### Answer
+upper_case_full_names = students.map do |i|
+    "#{i[:first_name].upcase} #{i[:last_name].upcase}"
+end
 
 ```rb
 LAMEES ALFALLAJ
@@ -81,6 +84,9 @@ first_order_for_each_user = []
 ```
 
 ### Answer
+first_order_for_each_user = users.map do |i|
+    i[:orders][0]
+end
 
 ```rb
 
@@ -154,6 +160,17 @@ coffee_average_per_person = []
 ```
 
 ### Answer
+coffee_average_per_person = people.map do |i|
+    coffee=0
+    counter=0
+    i[:transactions].map do |t|
+        if t[:type]=='COFFEE'
+            coffee += t[:amount] 
+            counter+=1
+        end
+    end
+    {name: "#{i[:name]}", coffee_average: coffee/counter}
+  end
 
 ```rb
 
@@ -214,7 +231,17 @@ most_expensive_products_by_store = []
 ```
 
 ### Answer
-
+  most_expensive_products_by_store = stores.map do |store|
+expensive=0
+item =''
+    store[:products].map do |product|
+        if product[:price]> expensive
+            item = product[:description] 
+            expensive= product[:price]
+        end
+    end
+    {store_name:store[:store_name], most_expensive_product: item, price:expensive }
+  end
 ```rb
 
 {:store_name=>"Jarir", :most_expensive_product=>{:description=>"Titanium", :price=>9384.33}}
@@ -228,7 +255,16 @@ most_expensive_products_by_store = []
 Write an infinite loop that will make you add all the your friends in the students list and after each add will ask if you want to quit the loop (yes/no) if the user choose no print all the students array
 
 ### Answer
-
+answer ="y"
+students_list=[]
+while (answer.downcase == "y" || answer.downcase == "yes")
+    puts "Add a friend to the list"
+    student = gets.chomp
+    students_list<<student
+    puts "do you want to continue? y or n"
+answer=gets.chomp
+end
+puts students_list
 ```
 
 add a student
