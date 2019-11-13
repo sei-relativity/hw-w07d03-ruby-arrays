@@ -27,6 +27,11 @@ upper_case_full_names = []
 
 ### Answer
 
+     upper_case_full_names = students.map do |key, value|
+     key.values[0].upcase + " " + key.values[1].upcase
+
+end
+
 ```rb
 LAMEES ALFALLAJ
 AISHA ALDABBAGH
@@ -80,7 +85,9 @@ first_order_for_each_user = []
 
 ```
 
-### Answer
+first_order_for_each_user = users.each do |key|
+key.values[1].first
+end
 
 ```rb
 
@@ -153,7 +160,20 @@ coffee_average_per_person = []
 
 ```
 
-### Answer
+coffee_average_per_person = []
+people.each do |index|
+avreg =0
+cups = 0
+index[:transactions].each do |key|
+if key[:type] == "COFFEE"
+cups += 1
+avreg += key[:amount]
+end
+end
+coffee_average_per_person.push({name: index[:name],coffee_average: avreg/cups})
+end
+p coffee_average_per_person
+end
 
 ```rb
 
