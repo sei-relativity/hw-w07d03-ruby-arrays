@@ -133,14 +133,19 @@ class homework
           
           coffee_average_per_person = []
           
-            arr = people.select{|item| item[:transactions]}.class
-            puts arr.{|item| item[:type]}
-            people.each do |value|
-            coffee_average_per_person << value[:orders][0]
-          end
-          coffee_average_per_person.each do |value|
-            puts value
-          end
+          coffee_average_per_person = people.map do |name|
+            total = 0
+            count = 0
+            name[:transactions].each do |transaction|
+                if transaction[:type] == "COFFEE"
+                   total += transaction[:amount]
+                   count = count+1
+                end
+            end
+                {name: name[:name],
+                coffee_average: (total/count)
+                }
+        end
       end
 
       def mst_expsv_product_by_store
@@ -188,13 +193,18 @@ class homework
           
           most_expensive_products_by_store = []
 
-          stores.each do |value|
-            most_expensive_products_by_store << value[:orders][0]
-          end
-
-          most_expensive_products_by_store.each do |value|
-            puts value
-          end
+          most_expensive_products_by_store = stores.map do |store|
+            expensive=0
+            item =''
+                store[:products].map do |product|
+                    if product[:price]> expensive
+                        item = product[:description] 
+                        expensive= product[:price]
+                    end
+                end
+                {store_name:store[:store_name], most_expensive_product: item, price:expensive }
+              end
+              most_expensive_products_by_store
       end
 
       # Bonus
