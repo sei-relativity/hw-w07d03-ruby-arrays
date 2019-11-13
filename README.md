@@ -23,19 +23,14 @@ students = [
 
 upper_case_full_names = []
 
-```
 
-### Answer
+upper_case_full_names =students.map do |students|
+"#{students[:first_name].upcase} #{students[:last_name].upcase}"
+end
 
-```rb
-LAMEES ALFALLAJ
-AISHA ALDABBAGH
-ABDULWAHHAB ALBALLA
-```
 
 ## 2. Find the first order for each user
 
-```rb
 
 users = [
   {
@@ -78,21 +73,17 @@ users = [
 
 first_order_for_each_user = []
 
-```
+first_order_for_each_user = users.map do |user|
+"#{user[:orders].first}"
+"#{user[:orders][0]}"
+end
+puts first_order_for_each_user
 
-### Answer
 
-```rb
-
-{:description=>"a bike"}
-{:description=>"bees"}
-{:description=>"a MacBook"}
-
-```
 
 ## 3. Find the average amount spent on coffee, per transaction, for each person
 
-```rb
+
 
 people = [
   {
@@ -151,21 +142,30 @@ people = [
 
 coffee_average_per_person = []
 
-```
+coffee_average_per_person = people.map do |person|
 
-### Answer
+  coffee_average = 0
+  coffee_count  = 0
+  total_transactions_amount = 0
 
-```rb
+  person[:transactions].each do |transaction|
+    if transaction[:type] == "COFFEE"
+      total_transactions_amount += transaction[:amount]
+      coffee_count += 1
+    end
+  end
 
-{:name=>"Sarah", :coffee_average=>5.93}
-{:name=>"Saud", :coffee_average=>4.43}
-{:name=>"Norah", :coffee_average=>37.28666666666667}
+  coffee_average = total_transactions_amount / coffee_count
 
-```
+  {name:person[:name], coffee_average: coffee_average}
+end
+
+puts coffee_average_per_person
+
 
 ## 4. Find the most expensive product for each store, with the store name:
 
-```rb
+
 
 stores = [
   {
@@ -211,17 +211,13 @@ stores = [
 
 most_expensive_products_by_store = []
 
-```
+most_expensive_products_by_store = stores.map do |store|
 
-### Answer
+store[:products]
 
-```rb
 
-{:store_name=>"Jarir", :most_expensive_product=>{:description=>"Titanium", :price=>9384.33}}
-{:store_name=>"Tamimi", :most_expensive_product=>{:description=>"Silver", :price=>654.44}}
-{:store_name=>"Souq", :most_expensive_product=>{:description=>"Sapphire", :price=>899.33}}
 
-```
+
 
 # Bonus
 
@@ -229,16 +225,4 @@ Write an infinite loop that will make you add all the your friends in the studen
 
 ### Answer
 
-```
 
-add a student
-Mohammed AlOfaysan
-Do you want to continue ? (y/n)
-y
-add a student
-Raje AlHarthi
-Do you want to continue ? (y/n)
-y
-add a student
-
-```
