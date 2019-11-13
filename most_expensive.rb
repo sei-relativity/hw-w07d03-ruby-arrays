@@ -41,3 +41,17 @@ stores = [
 ]
 
 most_expensive_products_by_store = []
+exp = stores.map{|x| x[:products]}
+
+
+most_exp = exp.each do |y|
+high = 0
+  y.each do |x|
+    if x[:price] > high
+      high = x[:price]
+    end
+  end
+  most_expensive_products_by_store.push(high)
+end 
+p most_expensive_products_by_store
+    
