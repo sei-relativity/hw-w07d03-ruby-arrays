@@ -53,6 +53,29 @@ people = [
 ]
 
 
+
+
 coffee_average_per_person = []
+peoples = people.map{|found_trans| found_trans[:transactions]}
+amount = 0
+times = 0
+
+pp2 = peoples.each do|x| 
+  x.each do |d|
+  if d[:type] == "COFFEE"
+  p d[:amount]
+  times += 1
+p times
+amount+= d[:amount]
+
+p "total #{amount}"
+
+  end
+ p"==========="
+  end
+  p avg = amount/times
+  
+ end
+
 
 
