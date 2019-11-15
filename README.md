@@ -163,6 +163,8 @@ coffee_average_per_person = []
 
 ```
 
+<https://www.codementor.io/tips/8247613177/how-to-filter-arrays-of-data-in-ruby>
+
 ## 4. Find the most expensive product for each store, with the store name:
 
 ```rb
